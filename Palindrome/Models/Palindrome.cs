@@ -1,44 +1,33 @@
 using System;
 using System.Collections.Generic;
 
-//
-// namespace Palindrome
-// {
-//   public class Palindrome
-//   {
-//     public bool IsPalindrome(string input)
-//     { string result="";
-//       char a = '@';
-//       char[] SplitInput = input.ToCharArray();
-//       for (int i=SplitInput.Length; i>=0; i--)
-//       {
-//         ++a;
-//         result += a;
-//       }
-//       if(input == result)
-//       {
-//         return true;
-//       }
-//       else
-//       {
-//         return false;
-//       }
-//     }
-//   }
-// }
-
 namespace Palindrome
 {
   public class Palindrome
   {
-    public bool IsPalindrome(string input, )
+    private string _input;
+
+    public Palindrome(string input)
     {
-      char[] SplitInput = input.ToCharArray();
-      for (int i=SplitInput.Length; i>=0; i--)
+      _input = input;
+    }
+    public bool IsPalindrome()
+    {
+      string SpecialCharRmInput="";
+      for (int i=0; i<=_input.Length-1; i++)
       {
-          result.Add(SplitInput[i]);
+        if ((_input[i]>='0'&& _input[i]<='9')|| (_input[i]>='a'&& _input[i]<='z') ||(_input[i]>='A'&& _input[i]<='Z'))
+       {
+        SpecialCharRmInput += _input[i].ToString().ToUpper();
+       }
+
       }
-      if(SplitInput == result)
+      string ReverseInput="";
+      for (int i=SpecialCharRmInput.Length-1; i>=0; i--)
+      {
+          ReverseInput += SpecialCharRmInput[i].ToString();
+      }
+      if(SpecialCharRmInput == ReverseInput)
       {
         return true;
       }
